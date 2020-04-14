@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-size: 12px;
+        font-family: "맑은 고딕", "굴림"; /*글꼴*/
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 800px; height: 700px; margin: 30px auto 0;">
+      <div
+        style="
+          height: 100px;
+          background-color: black;
+          color: #fff;
+          text-align: center;
+          line-height: 100px;
+        "
+      >
+        <!-- Text의 높이를 가운데로 지정하기 위해서는 
+            #1. line-height
+            #2. padding
+            둘 중 하나의 방법을 이용한다
+        -->
+        <h1>HTML</h1>
+      </div>
+      <div>
+        <div style="float: left; height: 50px; width: 20%; background-color: orange;"></div>
+        <div style="float: left; height: 50px; width: 80%; background-color: yellow;"></div>
+      </div>
+      <div style="clear: both;">
+        <div style="float: left; width: 20%;">
+          <div style="clear: both; height: 100px; background-color: red;"></div>
+          <div style="clear: both; height: 500px; background-color: purple;"></div>
+        </div>
+        <div style="float: left; width: 80%; height: 600px; background-color: silver;"></div>
+      </div>
+      <div style="clear: both; height: 80px; background-color: blue;"></div>
+    </div>
+  </body>
+</html>
