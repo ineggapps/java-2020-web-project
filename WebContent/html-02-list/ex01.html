@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>순서 없는 나열</h3>
+    <ul>
+      <!--기본적인 블릿 기호(list-style)는 채워진 원(disc) -->
+      <li>JAVA</li>
+      <li>CSS</li>
+      <li>HTML</li>
+      <li>javascript</li>
+    </ul>
+    <br />
+    <ul style="list-style: square;">
+      <li>JAVA</li>
+      <li>CSS</li>
+      <li>HTML</li>
+      <li>javascript</li>
+    </ul>
+    <br />
+    <ul style="list-style: circle;">
+      <li>JAVA</li>
+      <li>CSS</li>
+      <li>HTML</li>
+      <li>javascript</li>
+    </ul>
+    <br />
+    <ul style="list-style: none;">
+      <!--순서기호가 나오지 않도록 지정
+        그러나 순서기호가 나오는 자리에 padding이 이미 존재한다.
+    -->
+      <li>JAVA</li>
+      <li>CSS</li>
+      <li>HTML</li>
+      <li>javascript</li>
+    </ul>
+    <br />
+    <ul style="padding: 0;">
+      <!--순서기호가 나오지 않도록 지정
+        그러나 순서기호가 나오는 자리에 padding이 이미 존재한다.
+        그러므로 padding을 0으로 지정해 주어야 한다.
+    -->
+      <li>JAVA</li>
+      <li>CSS</li>
+      <li>HTML</li>
+      <li>javascript</li>
+    </ul>
+    <br />
+
+    <h3>순서 있는 목록</h3>
+    <ol>
+      <li>JAVA</li>
+      <li>CSS</li>
+      <li>HTML</li>
+      <li>javascript</li>
+    </ol>
+    <br />
+    <ol style="list-style: upper-alpha;">
+      <li>JAVA</li>
+      <li>CSS</li>
+      <li>HTML</li>
+      <li>javascript</li>
+    </ol>
+    <br />
+    <ol style="list-style: lower-roman;" start="11">
+      <li>JAVA</li>
+      <li>CSS</li>
+      <li>HTML</li>
+      <li>javascript</li>
+    </ol>
+    <br />
+
+    <h3>목록을 나열</h3>
+
+    <dl>
+      <dt>과목</dt>
+      <dd>JAVA</dd>
+      <dd>WEB</dd>
+      <dd>CSS</dd>
+      <dd>HTML</dd>
+    </dl>
+  </body>
+</html>
