@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      /* * {
+        box-sizing: border-box;
+      } */
+    </style>
+  </head>
+  <body>
+    <h3>div 태그</h3>
+    div:
+    <!--내용이 없거나 height 속성이 없으면 표시되지 않는다는 것을 유의한다-->
+    <div style="background: yellow;">예제1 (div는 기본 width:100%인 block 태그이다)</div>
+    <div style="background: red;"></div>
+    <div style="background: yellow;">예제2</div>
+    <br />
+    <!--내용이 없거나 height 속성이 없으면 표시되지 않는다는 것을 유의한다-->
+    <div style="border: 1px solid #000;">예제1 (div는 기본 width:100%인 block 태그이다)</div>
+    <div style="border: 1px solid #ff0000;"></div>
+    <div style="border: 1px solid #0000ff; height: 50px;"></div>
+    <div style="border: 1px solid #000;">예제2</div>
+
+    <div style="clear: both;">
+      <!--float를 했을 때는 반드시 위치를 조정할 개체들과 그룹화할 것.-->
+      <div
+        style="float: left; width: 150px; height: 50px; text-align: center; background: lightpink;"
+      >
+        A
+      </div>
+      <div
+        style="float: left; width: 150px; height: 50px; text-align: center; background: royalblue;"
+      >
+        B
+      </div>
+      <div
+        style="float: left; width: 150px; height: 50px; text-align: center; background: lightgreen;"
+      >
+        C
+      </div>
+    </div>
+    <!--D가 C의 위치와 겹쳐서 뒤에 숨어버린 것.-->
+    <!--clear:both;
+        float:left, right속성을 취소한다는 의미이다.
+        하지만 브라우저 버전에 따라서 차이가 있다.
+    -->
+    <div
+      style="
+        clear: both;
+        width: 150px;
+        height: 50px;
+        text-align: center;
+        background: lightseagreen;
+      "
+    >
+      D
+    </div>
+    <br />
+
+    <!-- float right를 하면 좌에서 우측으로 ABC가 아니라 좌에서 우측을 기준으로 CBA가 된다.-->
+    <div style="clear: both;">
+      <!--float를 했을 때는 반드시 위치를 조정할 개체들과 그룹화할 것.-->
+      <div
+        style="float: left; width: 150px; height: 50px; text-align: center; background: lightpink;"
+      >
+        A
+      </div>
+      <div
+        style="float: right; width: 150px; height: 50px; text-align: center; background: royalblue;"
+      >
+        B
+      </div>
+      <div
+        style="
+          float: right;
+          width: 150px;
+          height: 50px;
+          text-align: center;
+          background: lightgreen;
+        "
+      >
+        C
+      </div>
+    </div>
+    <br /><br />
+    <hr />
+    <!--
+        TIP...
+        box-sizing: content-box | border-box | initial | inherit
+        content-box: width, height을 정할 때 내용까지만 사이즈를 산정
+        border-box: width, height를 정할 때 테두리까지 사이즈를 산정
+    -->
+    <div style="width: 468px; clear: both; background: yellow; height: 56px;">
+      <!--float를 했을 때는 반드시 위치를 조정할 개체들과 그룹화할 것.-->
+      <!--실제 폭: width+border(왼쪽)+border(오른쪽)
+        실제 높이: height+border(위쪽)_border(아래쪽)
+    -->
+      <div
+        style="
+          float: left;
+          width: 150px;
+          height: 50px;
+          text-align: center;
+          border: 3px solid tomato;
+        "
+      >
+        AA
+      </div>
+      <div
+        style="
+          float: left;
+          width: 150px;
+          height: 50px;
+          text-align: center;
+          border: 3px solid orange;
+        "
+      >
+        BB
+      </div>
+      <div
+        style="
+          float: left;
+          width: 150px;
+          height: 50px;
+          text-align: center;
+          border: 3px solid orchid;
+        "
+      >
+        CC
+      </div>
+    </div>
+  </body>
+</html>
