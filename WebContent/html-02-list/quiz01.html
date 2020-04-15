@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-size: 14px;
+      }
+      #container {
+        width: 700px;
+        margin: 20px auto;
+      }
+      h1#title {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+      #board_container,
+      #board_container ul {
+        clear: both;
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        border-bottom: 1px solid #ccc;
+      }
+      ul li {
+        list-style-type: none;
+        text-align: center;
+      }
+      ul.header {
+        border-top: 1px solid #ccc;
+        background-color: #507cd1;
+        color: white;
+      }
+      #board_container ul li {
+        float: left;
+        width: 10%;
+      }
+      #board_container ul li:nth-child(2) {
+        text-align: left;
+        width: 50%;
+      }
+      #board_container ul li:nth-child(4) {
+        width: 20%;
+      }
+      .pager {
+        width: 100%;
+        text-align: center;
+      }
+      .pager li {
+        display: inline-block;
+        margin: 10px auto;
+      }
+      .pager li.current {
+        font-weight: bold;
+      }
+      .pager li:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      .control {
+        margin: 25px 0 10px;
+        line-height: 27px;
+        vertical-align: top;
+      }
+      .control select {
+        border: 0.5px solid #c0c0c0;
+        height: 27px;
+        border-radius: 5px;
+        padding-left: 10px;
+      }
+      .control #query {
+        border: 0.5px solid #c0c0c0;
+        border-radius: 5px;
+        height: 27px;
+        padding: 0 5px;
+      }
+      .control #query:focus {
+        outline: none;
+      }
+      .control #submit {
+        width: 50px;
+        height: 27px;
+        border: 0.5px solid #c0c0c0;
+        border-radius: 5px;
+        line-height: 27px;
+      }
+      .control #submit:hover {
+        cursor: pointer;
+      }
+      .control #submit:focus {
+        outline: none;
+      }
+      .control:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .left,
+      .right {
+        height: 27px;
+        line-height: 27px;
+      }
+      .left {
+        float: left;
+      }
+      .right {
+        float: right;
+      }
+      .buttons {
+        display: inline-block;
+      }
+      .buttons a {
+        display: block;
+        width: 50px;
+        border: 0.5px solid #c0c0c0;
+        border-radius: 5px;
+        text-align: center;
+        color: #333;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="title">| 게시판</h1>
+      <div class="control">
+        <div class="left">
+          <form action="#">
+            <select name="search_type" id="search_type">
+              <option value="1">제목</option>
+              <option value="2">내용</option>
+              <option value="3">작성자</option>
+            </select>
+            <input type="text" id="query" name="query" />
+            <input type="reset" id="submit" value="검색" />
+          </form>
+        </div>
+        <div class="right buttons">
+          <a href="#">글쓰기</a>
+        </div>
+      </div>
+      <div id="board_container">
+        <ul class="header">
+          <li>번호</li>
+          <li>제목</li>
+          <li>작성자</li>
+          <li>작성일</li>
+          <li>조회수</li>
+        </ul>
+        <ul>
+          <li>2</li>
+          <li>제목 2..</li>
+          <li>스프링</li>
+          <li>2015-10-10</li>
+          <li>10</li>
+        </ul>
+        <ul>
+          <li>1</li>
+          <li>제목 1..</li>
+          <li>홍길동</li>
+          <li>2015-10-10</li>
+          <li>5</li>
+        </ul>
+      </div>
+      <ul class="pager">
+        <li class="current">1</li>
+        <li>2</li>
+      </ul>
+    </div>
+  </body>
+</html>
