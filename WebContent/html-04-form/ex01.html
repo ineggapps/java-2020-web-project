@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script type="text/javascript">
+    <script>
       function send() {
-        alert("방가 ^^");
+        var f = document.myForm;
+        var s = "아이디: " + f.id.value + ", 패스워드: " + f.pwd.value;
+        alert(s);
       }
     </script>
   </head>
@@ -17,14 +19,152 @@
         <!-- input태그가 하나밖에 없으면 submit 버튼이 없이 바로 서버로 보낸다. (여기서는 javascript:send() 메서드 호출) -->
         <legend>입력 사항</legend>
         <p>
-          <label>아이디: <input type="text" name="id" /></label>
+          <label
+            >아이디:
+            <input
+              type="text"
+              name="id"
+              required="required"
+              maxlength="10"
+              pattern="[a-zA-Z]+"
+              placeholder="아이디 입력하삼~"
+          /></label>
         </p>
         <p>
-          <label>암호: <input type="password" name="password" /></label>
+          <label>패스워드: <input type="password" name="pwd" /></label>
+        </p>
+        <p>
+          <label>이름<input type="text" name="name" /></label>
         </p>
       </fieldset>
+      <fieldset>
+        <legend>성별</legend>
+        <p>
+          <label> <input type="radio" name="gender" value="m" />남자 </label>
+          <label> <input type="radio" name="gender" value="w" checked />여자 </label>
+        </p>
+      </fieldset>
+
       <p>
-        <button type="submit">입력 완료</button>
+        <label>
+          전화번호
+          <input type="tel" name="tel" required="required" pattern="(010-[0-9]{4}-[0-9]{4})" />
+        </label>
+      </p>
+
+      <p>
+        <label
+          >이메일
+          <input type="email" name="email" />
+        </label>
+      </p>
+
+      <p>
+        <label>
+          생년월일:
+          <input type="date" name="birth" />
+        </label>
+      </p>
+
+      <p>
+        <label>
+          탄생 시각:
+          <input type="time" name="birth" />
+        </label>
+      </p>
+
+      <p>
+        <label>
+          나이:
+          <input type="number" name="age" min="1" max="99" />
+        </label>
+      </p>
+
+      <p>
+        <label>
+          학력
+          <!--  input의 name속성과 datalist의 id속성과의 문자열값을 동일하게 지정하여 자동완성할 input태그를 연결한다. -->
+          <input list="haks" name="hak" />
+          <datalist id="haks">
+            <option>대학원졸</option>
+            <option>대졸</option>
+            <option>고졸</option>
+            <option>기타</option>
+          </datalist>
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <select name="city">
+            <option value="">선택::</option>
+            <option value="seoul" selected="selected">서울</option>
+            <option value="gg">경기</option>
+            <option value="incheon">인천</option>
+            <option value="others">기타</option>
+          </select>
+        </label>
+      </p>
+
+      <p>
+        <label>
+          관심분야
+          <select name="inte" multiple="multiple" size="5">
+            <option>게임</option>
+            <option>영화/음악</option>
+            <option>여행</option>
+            <option>스포츠</option>
+            <option>IT</option>
+            <option>기타</option>
+          </select>
+        </label>
+      </p>
+
+      <p>
+        <label>
+          취미:
+          <input type="checkbox" name="hobby" value="게임" />게임
+          <input type="checkbox" name="hobby" value="음악" />음악
+          <input type="checkbox" name="hobby" value="영화" />영화
+          <input type="checkbox" name="hobby" value="독서" />독서
+          <input type="checkbox" name="hobby" value="등산" />등산
+        </label>
+      </p>
+
+      <p>
+        <label>
+          메모:
+          <!-- 한 줄 이상을 입력해야 할 때 ex: 게시글 작성 -->
+          <textarea name="memo" cols="70" rows="7"></textarea>
+        </label>
+      </p>
+
+      <p>
+        <label>
+          좋아하는 색상
+          <input type="color" name="color" value="#FF0000" />
+        </label>
+      </p>
+
+      <!-- 읽기전용 속성이지만 서버에 전송될 수 있는 항목이다. -->
+      <p><input type="text" readonly="readonly" value="서버로 전송됨" /></p>
+      <!-- 읽기전용 속서잉 아니라 disabled 속성이며 서버에 전달되지 않음. -->
+      <p><input type="text" disabled="disabled" value="서버로 전송되지 않음" /></p>
+
+      <p>
+        <label
+          >약관 동의
+          <input
+            type="checkbox"
+            onchange="javascript:form.btn.disabled = !checked"
+            checked="checked"
+          />
+        </label>
+      </p>
+
+      <p>
+        <button type="submit" name="btn">입력 완료</button>
+        <button type="reset">다시입력</button>
       </p>
     </form>
   </body>

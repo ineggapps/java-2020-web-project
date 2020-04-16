@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>모든 파일: <input type="file" name="file1" /></p>
+    <p>이미지 파일: <input type="file" name="file2" accept="image/*" /></p>
+    <p>
+      이미지 파일 여러 개 선택:
+      <input
+        type="file"
+        name="file2"
+        accept="image/png, image/jpeg, image/gif"
+        multiple="multiple"
+      />
+    </p>
+    <p>
+      <!-- form 태그 안에서 사용해야... -->
+      <button>전송버튼</button>
+      <button type="submit">전송버튼</button>
+      <button type="button">일반버튼</button>
+      <button type="reset">취소버튼</button>
+    </p>
+  </body>
+</html>
