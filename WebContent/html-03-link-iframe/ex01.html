@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style type="text/css">
+    a {
+      /* cursor:pointer;  기본값*/
+      cursor: progress;
+      color: darkblue;
+      text-decoration: none;
+    }
+    /* 가상(의사)의 속성 = pseudo property */
+    a:hover, /*마우스를 올렸을 때*/
+    a:active {
+      color: tomato;
+      text-decoration: underline;
+    }
+    a:active {
+      /*링크를 클릭했을 때*/
+      cursor: not-allowed;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav li {
+      float: left;
+    }
+
+    .menuItem {
+      display: inline-block; /*width 속성을 먹이기 위해 사용*/
+      color: #333;
+      padding: 10px 30px 10px;
+      text-decoration: none;
+    }
+
+    .menuItem:hover,
+    .menuItem:active {
+      color: #333;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    .menuItem-disabled {
+      font-weight: 700;
+      pointer-events: none;
+    }
+  </style>
+  <body>
+    <h3>a 태그</h3>
+    <p><a href="ex01.html">EX1</a></p>
+    <p><a href="https://google.com" target="_blank"> 구글</a></p>
+
+    <nav>
+      <ul>
+        <li><a href="#" class="menuItem">홈</a></li>
+        <li><a href="https://google.com/" class="menuItem menuItem-disabled">방명록</a></li>
+        <li><a href="#" class="menuItem">게시판</a></li>
+        <li><a href="#" class="menuItem">공지사항</a></li>
+        <li><a href="#" class="menuItem">일정관리</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
