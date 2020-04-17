@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      #lay {
+        color: blue;
+        border: 1px solid #aaa;
+        padding: 20px;
+        margin: 20px;
+      }
+      p {
+        text-align: center;
+      }
+    </style>
+    <script>
+      function fun() {
+        /*
+          HTML elements 중에서 id 속성이 중복되면 하나만 받아들이기 때문에 id를 지정할 때 유의해야 한다.
+          */
+        var f = document.getElementById("lay").innerHTML;
+        alert(f);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="lay">id속성은 절대로 중복되어서는 안 된다.1</div>
+    <div id="lay">
+      id속성은 절대로 중복되어서는 안 된다.2 이렇게 중복이름이 있으면 js에서 현재 속성에는 id로
+      접근이 불가능하다
+    </div>
+    <p>
+      <button type="button" onclick="fun();">눌러봐</button>
+    </p>
+  </body>
+</html>
