@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .box-normal {
+        width: 100px;
+        height: 100px;
+      }
+      .box {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+      }
+      .orange {
+        background-color: coral;
+        z-index: 1000; /*static에서는 적용되지 않는다.*/
+      }
+      .red {
+        background-color: tomato;
+        left: 50px;
+        top: 50px;
+        z-index: 100;
+      }
+      .green {
+        background-color: lightgreen;
+        left: 100px;
+        top: 100px;
+        z-index: 10;
+      }
+      .blue {
+        background-color: lightskyblue;
+        left: 150px;
+        top: 150px;
+        z-index: 5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box-normal orange"></div>
+    <div class="box red"></div>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+  </body>
+</html>
