@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+* {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: -0.03em;
+}
+ul {
+  list-style: none;
+  list-style-type: none;
+}
+body {
+  /* background: url("https://cdn.pixabay.com/photo/2020/03/28/15/20/cat-4977436_1280.jpg") center 0%; */
+  /* background-size: cover; */
+}
+a {
+  text-decoration: none;
+}
+
+input:focus {
+  outline: 0 none;
+}
+
+#login_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 50px 0;
+}
+
+#login_content,
+#login_footer {
+  width: 100%;
+}
+
+#login_form {
+  background-color: darkcyan;
+  max-width: 380px;
+  min-height: 435px;
+  margin: 0 auto;
+  padding: 59px 69px 49px;
+}
+
+#login_form a {
+  color: #fff;
+}
+#login_form legend {
+  display: none;
+}
+
+#login_form .text_form,
+#login_form .login_button {
+  width: 100%;
+  height: 100%;
+}
+#login_form .login_item {
+  height: 47px;
+}
+
+#login_form .login_item_deep {
+  height: 58px;
+  line-height: 58px;
+  vertical-align: middle;
+}
+
+/* 로그인 폼 디자인 */
+#login_form .text_form {
+  font-size: 1.001rem;
+  color: white;
+  background: transparent;
+  border-top: 0 none;
+  border-left: 0 none;
+  border-right: 0 none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+#login_form .text_form::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+}
+
+#login_form .text_form:focus {
+  border-bottom: 2px solid rgba(255, 255, 255);
+}
+
+#login_form .login_button {
+  background-color: #ffe500;
+  border: 0 none;
+  border-radius: 3px;
+}
+
+#login_form .login_button:active {
+  background-color: #ffe500;
+}
+
+/* 회원가입 */
+#join_box {
+  font-size: 0.8rem;
+  margin: 30px 0;
+}
+#join_box a {
+  float: left;
+}
+#join_box ul {
+  float: right;
+}
+#join_box ul {
+  padding: 0;
+  list-style: none;
+}
+#join_box ul li {
+  float: left;
+}
+#join_box ul li:not(:first-child):before {
+  content: "";
+  float: left;
+  width: 1px;
+  height: 5px;
+  margin: 4px 10px;
+  background-color: #e5e5e5;
+}
+
+/* footer */
+#login_footer {
+  position: absolute;
+  width: 100%;
+  background-color: darkgoldenrod;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 20px;
+  font-size: 0.9rem;
+}
+#login_footer ul {
+  width: 518px;
+  margin: 0 auto;
+}
+#login_footer ul:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+#login_footer ul li {
+  float: left;
+}
