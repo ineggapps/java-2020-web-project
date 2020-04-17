@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      @import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+      body {
+        font-family: "Gugi", cursive;
+      }
+      div > p:nth-child(2n + 1) {
+        /*n은 0부터 시작... 홀수 번째만 지정하는 수식*/
+        color: tomato;
+      }
+
+      div > p:nth-child(3n) {
+        /*3의 배수*/
+        background-color: yellow;
+      }
+
+      div > p:nth-child(4) {
+        /*4번째 요소만*/
+        background-color: bisque;
+      }
+
+      /*요소 앞에 특정 문자열 추가하기*/
+      p:before {
+        content: "※";
+      }
+
+      p:after {
+        content: "★";
+        color: blueviolet;
+      }
+
+      ::selection {
+        background: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>HTML</p>
+      <p>CSS</p>
+      <p>Javascript</p>
+      <p>jquery</p>
+      <p>Node.js</p>
+      <p>Spring</p>
+      <p>Servlet</p>
+      <p>JSP</p>
+    </div>
+  </body>
+</html>

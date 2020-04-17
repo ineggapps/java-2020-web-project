@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      input,
+      button {
+        border: 1px solid tomato;
+      }
+
+      input[type="text"]:focus {
+        background-color: yellow;
+        border: 1px solid blue;
+      }
+
+      button:hover {
+        background-color: blue;
+        color: #fff;
+      }
+
+      /* 포커스를 받을 때 textarea, input 그림자 제거하기 */
+      textarea:focus,
+      input:focus {
+        outline: none;
+      }
+
+      input:checked + span {
+        color: blue;
+        font-weight: bold;
+      }
+
+      input:disabled {
+        border: 0;
+        background-color: yellow;
+      }
+      /* input[disabled] {
+        border: 0;
+        background-color: black;
+      } */
+    </style>
+  </head>
+  <body>
+    <div>
+      <p><input type="text" /></p>
+      <p><input type="password" /></p>
+      <p><input type="text" /></p>
+      <p><input type="text" /></p>
+      <p><button type="button">버튼</button></p>
+      <p><input type="checkbox" /><span>체크</span></p>
+      <p><input type="checkbox" /><span>체크</span></p>
+      <p><input type="radio" />라디오</p>
+      <p><input type="text" disabled /></p>
+    </div>
+  </body>
+</html>

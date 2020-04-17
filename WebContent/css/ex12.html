@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      div > p {
+        /* 자식만 글자 색깔 지정 */
+        color: tomato;
+      }
+      div p {
+        /* 후손들은 배경색 지정하기 */
+        background-color: wheat;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>문단1</p>
+      <p>문단2</p>
+      <!-- 원래는 inline태그 안에 block태그를 넣으면 안 된다 -->
+      <span><p>문단3</p></span>
+    </div>
+  </body>
+</html>

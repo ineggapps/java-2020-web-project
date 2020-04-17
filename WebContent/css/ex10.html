@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      /*input 요소 중 value 속성을 가진 요소들만 글자색깔을 red로!*/
+      input[value] {
+        color: red;
+      }
+      /* input 요소 중 type이 text만 border 지정하기 */
+      input[type="text"] {
+        border: 1px solid blue;
+      }
+      /* 특정 단어(띄어쓰기)가 포함된 경우, 띄어쓰기가 되어 있지 않으면 인식하지 않음. */
+      input[title~="입력"] {
+        background-color: yellow;
+      }
+      /* p 요소 중 lang값이 en과 일치하거나 en-로 시작하는 것들만?*/
+      p[lang|="en"] {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h3>Attribute 예제</h3>
+      <p><input type="text" title="아이디를 입력 하세요" /></p>
+      <p><input type="password" title="비밀번호를 입력 하세요" /></p>
+      <p><input type="text" value="30" title="나이" /></p>
+      <p><input type="text" value="0" title="점수" /></p>
+      <p><input type="button" /></p>
+    </div>
+    value 속성을 가진 요소만 글자 색깔을 red로 바꾸기
+    <br />
+    <div>
+      <p lang="en">JAVA</p>
+      <p lang="en-US">CSS</p>
+      <p lang="us">HTML</p>
+      <p lang="no">WEB</p>
+    </div>
+  </body>
+</html>
