@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      p {
+        color: tomato !important;
+      }
+
+      #lay {
+        color: red;
+      }
+
+      div.box {
+        color: black;
+      }
+
+      .box {
+        color: purple;
+      }
+
+      div {
+        color: orange;
+      }
+
+      span {
+        color: blue;
+      }
+
+      span {
+        color: red;
+      }
+
+      /*CSS 선언 순서도 중요... 가장 밑에 선언한 것이 우선한다*/
+      .red {
+        color: red;
+      }
+
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="lay">
+      무슨 색깔? tomato
+    </p>
+    <div class="box">무슨색:black</div>
+
+    <div><span>색깔? red!!</span></div>
+    <!--class를 동시에 선언할 수 있지만, 여기서 class를 언급한 순서는 상관없다.-->
+    <div><span class="red blue">색깔? blue!!</span></div>
+  </body>
+</html>
