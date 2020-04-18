@@ -11,8 +11,10 @@ ul {
 html,
 body {
   height: 100%;
-}
-body {
+  /* white space bug fix in chrome */
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -181,6 +183,11 @@ button:focus {
 }
 
 /* footer */
+hr#border {
+  visibility: hidden;
+  margin: 0 2%;
+  border-top: 2px solid #fff;
+}
 #login_footer {
   position: absolute;
   bottom: 0;
@@ -194,6 +201,7 @@ button:focus {
 
 #login_footer .fnb {
   margin: 10px 0;
+  word-break: keep-all;
 }
 #login_footer .fnb a {
   margin: 0 10px;
@@ -201,4 +209,27 @@ button:focus {
 
 #login_footer small {
   font-size: 0.9em;
+}
+
+/* 반응형 */
+@media (max-width: 519px) {
+  #login_form {
+    padding: 59px 0 49px; /*◀ TODO: 이 패딩 때문에 화면 가로 폭을 축소하면 레이아웃으 깨진다. 미디어 쿼리 사용해 보기!*/
+  }
+  #login_content {
+    padding: 30px 0 0;
+  }
+  #login_form legend {
+    display: none;
+  }
+
+  hr#border {
+    visibility: visible;
+  }
+}
+/*레이아웃 깨짐 방지*/
+@media (max-width: 400px) {
+  #login_wrap {
+    min-width: 400px;
+  }
 }
