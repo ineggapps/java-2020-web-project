@@ -4,6 +4,12 @@
     Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: -0.03em;
 }
+/* ghost */
+/* * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */
 ul {
   list-style: none;
   list-style-type: none;
