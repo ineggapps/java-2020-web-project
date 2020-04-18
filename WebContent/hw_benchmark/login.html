@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/layout.css" />
-    <title>Document</title>
+    <title>회원 로그인</title>
   </head>
   <body>
     <div id="login_wrap">
-      <div id="login_head">Kakao Login</div>
+      <div class="background_wrapper"></div>
+      <div class="background_overlay"></div>
+      <div id="login_header">
+        <h1>Login<strong>Story</strong></h1>
+      </div>
       <div id="login_content">
         <div id="login_form">
           <form>
             <fieldset>
-              <legend>로그인</legend>
+              <legend>지금 <strong>당신과</strong><br />만나는 로그인</legend>
               <div class="login_item">
                 <input
                   class="text_form"
@@ -29,7 +33,10 @@
                 placeholder="비밀번호"" />
               </div>
               <div class="login_item login_item_deep">
-                <input type="checkbox" name="check_account" /><span>로그인 상태 유지</span>
+                <input type="checkbox" name="check_account" id="check_account" /><label
+                  for="check_account"
+                  >로그인 상태 유지</label
+                >
               </div>
               <div class="login_item">
                 <button class="login_button" type="button">로그인</button>
@@ -46,13 +53,14 @@
         </div>
       </div>
       <div id="login_footer">
-        <ul>
-          <li><a href="#">이용약관</a></li>
-          <li><a href="#">개인정보 처리방침</a></li>
-          <li><a href="#">운영정책</a></li>
-          <li><a href="#">고객센터</a></li>
-          <li><a href="#">공지사항</a></li>
-        </ul>
+        <div class="fnb">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보 처리방침</a>
+          <a href="#">운영정책</a>
+          <a href="#">고객센터</a>
+          <a href="#">공지사항</a>
+        </div>
+        <small>Copyright &copy;<a href="#">Hojoong.</a> All rights reserved.</small>
       </div>
     </div>
   </body>

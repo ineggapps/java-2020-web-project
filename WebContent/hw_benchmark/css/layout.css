@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap");
 * {
   font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
     Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -8,23 +8,52 @@ ul {
   list-style: none;
   list-style-type: none;
 }
+html,
 body {
-  /* background: url("https://cdn.pixabay.com/photo/2020/03/28/15/20/cat-4977436_1280.jpg") center 0%; */
-  /* background-size: cover; */
+  height: 100%;
+}
+body {
 }
 a {
   text-decoration: none;
 }
 
-input:focus {
+input:focus,
+button:focus {
   outline: 0 none;
 }
 
 #login_wrap {
+  /* background-color: darkgray; */
   position: relative;
   width: 100%;
+  min-height: 100%; /*이걸 해줘야 세로 크기가 줄어도 모양이 찌그러지지 않음*/
+}
+.background_wrapper,
+.background_overlay {
+  width: 100%;
   height: 100%;
-  padding: 50px 0;
+  position: absolute;
+  z-index: -1;
+}
+.background_wrapper {
+  background: url("https://github.com/ineggapps/java-2020-web-project/blob/master/WebContent/hw_benchmark/images/cat-4977436.jpg?raw=true")
+    center 0%;
+  background-size: cover;
+}
+.background_overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#login_header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#login_header h1 {
+  font-size: 1.6em;
+  font-weight: 100;
 }
 
 #login_content,
@@ -32,19 +61,33 @@ input:focus {
   width: 100%;
 }
 
-#login_form {
-  background-color: darkcyan;
-  max-width: 380px;
-  min-height: 435px;
-  margin: 0 auto;
-  padding: 59px 69px 49px;
+#login_content {
+  padding: 200px 0 0;
 }
 
-#login_form a {
+#login_form {
+  /* background-color: darkcyan; */
+  max-width: 380px;
+  min-height: 435px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 59px 69px 49px; /*◀ TODO: 이 패딩 때문에 화면 가로 폭을 축소하면 레이아웃으 깨진다. 미디어 쿼리 사용해 보기!*/
+}
+
+#login_form a,
+.login_item_deep,
+#login_footer a,
+#login_footer,
+#login_form legend,
+#login_header {
   color: #fff;
 }
 #login_form legend {
-  display: none;
+  /* display: none; */
+  font-size: 2.4em;
+  line-height: 1.1em;
+  font-weight: 100;
+  margin-bottom: 40px;
 }
 
 #login_form .text_form,
@@ -53,7 +96,7 @@ input:focus {
   height: 100%;
 }
 #login_form .login_item {
-  height: 47px;
+  height: 55px;
 }
 
 #login_form .login_item_deep {
@@ -71,6 +114,11 @@ input:focus {
   border-left: 0 none;
   border-right: 0 none;
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.login_item label,
+#login_form .text_form,
+#login_form .login_button {
   cursor: pointer;
 }
 
@@ -90,7 +138,7 @@ input:focus {
 }
 
 #login_form .login_button:active {
-  background-color: #ffe500;
+  background-color: #f0d700;
 }
 
 /* 회원가입 */
@@ -124,21 +172,19 @@ input:focus {
 #login_footer {
   position: absolute;
   width: 100%;
-  background-color: darkgoldenrod;
-  bottom: 0;
-  left: 0;
-  padding-bottom: 20px;
-  font-size: 0.9rem;
+  padding-bottom: 10px;
+  /* background-color: darkgoldenrod; */
+  font-size: 0.8rem;
+  text-align: center;
 }
-#login_footer ul {
-  width: 518px;
-  margin: 0 auto;
+
+#login_footer .fnb {
+  margin: 10px 0;
 }
-#login_footer ul:after {
-  clear: both;
-  content: "";
-  display: block;
+#login_footer .fnb a {
+  margin: 0 10px;
 }
-#login_footer ul li {
-  float: left;
+
+#login_footer small {
+  font-size: 0.9em;
 }
