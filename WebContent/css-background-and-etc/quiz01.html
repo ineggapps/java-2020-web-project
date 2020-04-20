@@ -34,12 +34,14 @@
       }
 
       #header {
-        line-height: 200px;
+        position: fixed;
+        line-height: 100px;
         text-align: center;
         width: 100%;
-        height: 200px;
+        height: 100px;
         background-color: black;
         color: orange;
+        z-index: 900;
       }
 
       #container {
@@ -47,16 +49,17 @@
         height: 1000px;
       }
       #content {
-        padding: 2%;
+        padding: 100px 2%;
         background-color: palegoldenrod;
         float: left;
         width: 76%;
         height: 100%;
       }
       #right {
-        padding: 2%;
+        position: fixed;
+        padding: 100px 2%;
         background-color: palevioletred;
-        float: left;
+        right: 0;
         width: 16%;
         height: 100%;
       }
