@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .box1 {
+        width: 200px;
+        height: 200px;
+        margin: 30px;
+        border: 1px solid #dddddd;
+      }
+      .box2 {
+        width: 200px;
+        margin: 30px;
+        border: 2px dotted #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"><img src="img/img.png" alt="" /></div>
+    <div class="box2"><img src="img/img.png" alt="" /></div>
+    <div class="box2"><img src="img/img.png" alt="" style="vertical-align: bottom;" /></div>
+    <br />
+    <h3>inline-block을 사용할 때 특히 상하배열에 주의한다. (baseline 때문이다!!!)</h3>
+    <br />
+    <div class="box1" style="display: inline-block;">A</div>
+    <div class="box1" style="display: inline-block; vertical-align: top;">
+      A <br />
+      B <br />
+      C
+    </div>
+  </body>
+</html>
