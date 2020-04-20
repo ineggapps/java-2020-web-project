@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css"></style>
+  </head>
+  <body>
+    <h3>list 스타일</h3>
+    <p>기본: disc</p>
+    <ul>
+      <li>자바</li>
+      <li>서블릿</li>
+      <li>스프링</li>
+    </ul>
+    <p>padding을 0으로 주면 list-style이 표시되지 않는다.</p>
+    <ul style="padding: 0;">
+      <li>자바</li>
+      <li>서블릿</li>
+      <li>스프링</li>
+    </ul>
+    <p>list-style-type: 리스트의 불릿 기호 변경</p>
+    <ul style="list-style-type: circle;">
+      <li>자바</li>
+      <li>서블릿</li>
+      <li>스프링</li>
+    </ul>
+    <p>li 태그의 style속성을 이용하여 각각의 list-style-type 변경하기</p>
+    <ul>
+      <li style="list-style-type: disc;">자바</li>
+      <li style="list-style-type: circle;">서블릿</li>
+      <li style="list-style-type: square;">스프링</li>
+      <li style="list-style-type: none;">없음</li>
+    </ul>
+
+    <p>OL태그의 list-style-type</p>
+    <ol style="list-style-type: upper-roman;">
+      <li>자바</li>
+      <li>서블릿</li>
+      <li>스프링</li>
+    </ol>
+
+    <ol style="list-style-type: decimal;">
+      <li>자바</li>
+      <li>서블릿</li>
+      <li>스프링</li>
+    </ol>
+
+    <ol>
+      <li style="list-style-type: decimal;">자바</li>
+      <li style="list-style-type: lower-roman;">서블릿</li>
+      <li style="list-style-type: upper-roman;">스프링</li>
+      <li style="list-style-type: lower-alpha;">웹</li>
+      <li style="list-style-type: upper-alpha;">HTML</li>
+    </ol>
+
+    <p>블릿을 이미지로...</p>
+    <ul style="list-style-image: url('img/plus.png');">
+      <li>자바</li>
+      <li>서블릿</li>
+      <li>스프링</li>
+    </ul>
+  </body>
+</html>
