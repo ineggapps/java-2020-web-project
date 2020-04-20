@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .box {
+        width: 300px;
+        height: 300px;
+        padding: 10px;
+        margin: 30px;
+        border: 2px solid #dddddd;
+      }
+
+      .bg1 {
+        background-image: url("./img/bg1.jpg");
+      }
+
+      .bg2 {
+        background-image: url("./img/bg1.jpg");
+        background-repeat: repeat-x;
+      }
+      .bg3 {
+        background-image: url("./img/bg1.jpg");
+        background-repeat: no-repeat;
+      }
+      .bg4 {
+        background-image: url("./img/bg1.jpg");
+        background-repeat: no-repeat;
+        background-position: right center;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>배경 이미지</h3>
+    <div class="box bg1">배경 이미지가 작으면 기본적으로 반복</div>
+    <div class="box bg2">x축으로만 반복</div>
+    <div class="box bg3">반복하지 않음. 기본 좌측 상단</div>
+    <div class="box bg4">반복하지 않고 오른쪽 중앙</div>
+  </body>
+</html>

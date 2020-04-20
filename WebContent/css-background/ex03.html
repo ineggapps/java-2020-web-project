@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .box {
+        width: 650px;
+        height: 450px;
+        /* height: 150px; */
+        padding: 10px;
+        margin: 30px;
+        border: 2px solid #dddddd;
+        background-image: url("img/bg4.jpg");
+        float: left;
+      }
+
+      .bg1 {
+        background-repeat: no-repeat;
+      }
+      .bg2 {
+        background-size: 300px 300px;
+      }
+      .bg3 {
+        background-size: 100% 100%;
+      }
+      .bg4 {
+        background-size: cover;
+      }
+      .bg5 {
+        background-size: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box bg1">배경 이미지 기본(반복 안 함)</div>
+    <div class="box bg2">지정한 크기(300px)로</div>
+    <div class="box bg3">백분율로. 화면을 줄이거나 늘이면 배경 이미지도 크기가 변경된다.</div>
+    <div class="box bg4">
+      cover:배경 크기 비율을 맞춘 상태로 부모의 너비와 높이 중 가장 큰 값에 맞춘다. 배경이 다 안
+      보일 수 있음.
+    </div>
+    <div class="box bg5">
+      contain:배경이미지 크기 비율을 유지한 채로 보임. 배경이 보이지 않는 부분이 없음.
+    </div>
+  </body>
+</html>

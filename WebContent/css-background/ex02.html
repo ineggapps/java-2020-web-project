@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .box {
+        width: 300px;
+        height: 300px;
+        padding: 10px;
+        margin: 30px;
+        border: 2px solid #dddddd;
+        float: left;
+      }
+
+      .bg1 {
+        background: url("./img/bg1.jpg") no-repeat;
+      }
+
+      .bg2 {
+        background: url("./img/bg1.jpg") no-repeat, url("./img/bg2.png");
+      }
+      .bg3 {
+        background: url("./img/bg3.png") no-repeat left top,
+          url("./img/bg3.png") no-repeat right top, url("./img/bg3.png") no-repeat left bottom,
+          url("./img/bg3.png") no-repeat right bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box bg1">배경 이미지</div>
+    <div class="box bg2">
+      여러 개의 배경 이미지가 설정된 경우 먼저 설정한 이미지가 전면에 표시됨
+    </div>
+    <div class="box bg3">배경 이미지가 좌상단, 우상단, 좌하단, 우하단 표시된다.</div>
+  </body>
+</html>
