@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .flex-container {
+        display: flex;
+        width: 200px;
+        padding: 10px;
+        margin: 20px;
+        border: 3px dotted #dddddd;
+      }
+
+      .nowrap {
+        flex-wrap: nowrap;
+      }
+
+      .wrap {
+        flex-wrap: wrap;
+      }
+
+      .box {
+        width: 60px;
+        height: 100%;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>flex-wrap: item 요소들을 강제로 한 줄에 배치할 것인지를 설정</h3>
+    <p>기본값</p>
+    <div class="flex-container">
+      <div class="box">A</div>
+    </div>
+    <div class="flex-container">
+      <div class="box">A</div>
+      <div class="box">B</div>
+    </div>
+    <div class="flex-container">
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+    </div>
+    <div class="flex-container">
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+      <div class="box">D</div>
+      <div class="box">E</div>
+      <div class="box">F</div>
+      <div class="box">G</div>
+      <div class="box">H</div>
+      <div class="box">I</div>
+      <div class="box">J</div>
+      <div class="box">K</div>
+      <!-- <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+      <div class="box">D</div>
+      <div class="box">E</div>
+      <div class="box">F</div>
+      <div class="box">G</div>
+      <div class="box">H</div>
+      <div class="box">I</div>
+      <div class="box">J</div>
+      <div class="box">K</div> -->
+    </div>
+    <div class="flex-container">
+      <div class="box">ITEM A</div>
+      <div class="box">ITEM B</div>
+      <div class="box">ITEM C</div>
+      <div class="box">ITEM D</div>
+      <div class="box">ITEM E</div>
+      <div class="box">ITEM F</div>
+    </div>
+    <hr />
+    <p>flex-wrap:nowrap</p>
+    <div class="flex-container nowrap">
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+      <div class="box">D</div>
+      <div class="box">E</div>
+      <div class="box">F</div>
+      <div class="box">G</div>
+      <div class="box">H</div>
+      <div class="box">I</div>
+      <div class="box">J</div>
+      <div class="box">K</div>
+      <!-- <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+      <div class="box">D</div>
+      <div class="box">E</div>
+      <div class="box">F</div>
+      <div class="box">G</div>
+      <div class="box">H</div>
+      <div class="box">I</div>
+      <div class="box">J</div>
+      <div class="box">K</div> -->
+    </div>
+    <div class="flex-container nowrap">
+      <div class="box">ITEM A</div>
+      <div class="box">ITEM B</div>
+      <div class="box">ITEM C</div>
+      <div class="box">ITEM D</div>
+      <div class="box">ITEM E</div>
+      <div class="box">ITEM F</div>
+    </div>
+    <hr />
+    <p>flex-wrap:wrap</p>
+    <div class="flex-container wrap">
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+      <div class="box">D</div>
+      <div class="box">E</div>
+      <div class="box">F</div>
+      <div class="box">G</div>
+      <div class="box">H</div>
+      <div class="box">I</div>
+      <div class="box">J</div>
+      <div class="box">K</div>
+      <!-- <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+      <div class="box">D</div>
+      <div class="box">E</div>
+      <div class="box">F</div>
+      <div class="box">G</div>
+      <div class="box">H</div>
+      <div class="box">I</div>
+      <div class="box">J</div>
+      <div class="box">K</div> -->
+    </div>
+    <hr />
+  </body>
+</html>
