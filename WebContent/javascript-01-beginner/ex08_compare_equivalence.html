@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      var a, b;
+      var a, b, c;
       a = 100;
       b = "100";
 
@@ -22,6 +22,17 @@
       } else {
         console.log("a!==b");
       }
+
+      //논리곱, 논리합 연산 시 반환되는 값 알아보기
+      //이렇게... 활용하는 것을 권장하지 않는다...
+
+      a = "seoul";
+      b = true;
+      c = a || b; //seoul
+      console.log(c);
+
+      c = a && b;
+      console.log(c); //true
     </script>
   </head>
   <body></body>
