@@ -6,12 +6,33 @@
     <title>Document</title>
     <script>
       function calc() {
+        //완벽한 계산식은 아님
+        //TODO: 나중에는 정규식을 이용하여 계산을 수행.
+
         // alert(num1.value);//id값을 바로 입력해도 값을 받아올 수 있다. (권장하지 않음)
         // document.getElementById("num1").style.display = "none"; //dom 객체 스타일 제어
         var n1 = document.getElementById("num1").value;
         var n2 = document.getElementById("num2").value;
         var o = document.getElementById("oper").value;
         // alert(n1 + o + n2);
+
+        //!n1 => (n1) => n1이 입력되었다면 => !(n1) => n1이 입력되지 않았다면
+        //"" => false
+
+        n1 = n1.trim();
+        n2 = n2.trim();
+
+        if (!n1 || isNaN(n1)) {
+          alert("숫자를 입력하세요.");
+          document.getElementById("num1").focus();
+          return;
+        }
+
+        if (!n2 || isNaN(n2)) {
+          alert("숫자를 입력하세요.");
+          document.getElementById("num2").focus();
+          return;
+        }
 
         n1 = parseInt(n1);
         n2 = parseInt(n2);
