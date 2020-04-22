@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var str = "자바스크립트"; //문자열 리터럴 생성
+      var strObj = new String(str); // 문자열 객체 생성
+      console.log(str.length); // 리터럴 값은 내부에서 객체를 생성한 후에 length 프로퍼티를 참조
+      console.log(str == strObj); //동등(==) 연산자는 해당 리터럴 값과 래퍼 객체를 동일하게 취급
+      console.log(str === strObj); // 일치(===)연산자는 해당 리터럴 값과 래퍼 객체를 별개로 봄
+      console.log(typeof str); //string 반환
+      console.log(typeof strObj); //object 반환
+    </script>
+  </head>
+  <body></body>
+</html>
