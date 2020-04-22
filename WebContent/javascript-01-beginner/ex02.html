@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*
+          var: 전역변수 및 지역변수 선언
+          let: 지역변수
+          const: 상수
+      */
+      var a = 10;
+      //JAVASCRIPT에는 문자, 문자열의 구분이 없이 홑따옴표, 쌍따옴표 모두 가능하다.
+      var b = "seoul";
+      var c = "korea";
+      var d;
+      console.log(typeof a); //number
+      console.log(typeof b); //string
+      console.log(typeof c); //string
+      console.log(typeof d); //undefined
+      console.log(a + ":" + b + ":" + c + ":" + d);
+
+      if (d == undefined) {
+        console.log("d is undefined!");
+      }
+
+      function fun() {
+        var x = 10;
+        if (x >= 10) {
+          var y = 20;
+          console.log("if 안: " + y); //20
+        }
+        console.log("if 밖: " + y); //20
+
+        if (x >= 10) {
+          let z = 100;
+          console.log("if 안: " + z); //100
+        }
+        console.log("if 밖: " + z); //ReferenceError
+        ///오류가 발생한 다음 줄부터는 실행되지 않는다.
+        console.log("종료...");
+      }
+      fun();
+    </script>
+  </head>
+  <body></body>
+</html>
