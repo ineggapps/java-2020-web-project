@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //==,===
+      var a, b, c;
+
+      //undefined와 number가 더해지면 NaN이 된다.
+      a = 10;
+      c = a + b; //10+undefined => NaN(Not a Number)
+      console.log(c); //NaN
+      console.log(typeof c, typeof NaN); //number, number
+      //NaN 전역상숫값의 일종이며 숫자가 아니라는 의미이다.
+
+      //string과 undefined가 결합하면 string값undefined가 된다.
+      a = "seoul";
+      c = a + b; //seoul
+      console.log(c); //"seoulundefined"
+      console.log(typeof c); //string
+
+      //number와 null과 더하면 number가 된다.
+      a = 10;
+      b = null; //null도 하나의 값이라고 봐야 한다.
+      c = a + b; //10
+      console.log(c); //10
+      console.log(typeof c); //number
+
+      //string과 더하면 string이 된다.
+      a = "10";
+      b = a + 30;
+      console.log(b); //1030
+      console.log(typeof b); //string
+
+      //string과 number 곱하면 number가 된다.
+      a = "10";
+      b = a * 30; //300
+      console.log(b); //300
+      console.log(typeof b); //number
+
+      //뺄셈은 number와 string과 연산이 불가능하다.
+      a = 10;
+      b = "A";
+      c = a - b; //NaN
+      console.log(c); //NaN
+      console.log(typeof c); //number
+
+      //IE는 거듭제곱 연산 X
+      //거듭제곱
+      a = 2 ** 3; //8
+      console.log(a);
+
+      //거듭제곱의 연산 우선순위에 유의한다
+      a = 2 ** (3 ** 2); // 2 ** 3 ** 2 <<< 계산 우선순위에 유의한다.
+      console.log(a); //512 (2**9)
+
+      a = (-2) ** 2; // -2 ** 2 허용하지 않음
+      console.log(a);
+
+      a = 10 ** -1; // 0.1??
+      console.log(a);
+    </script>
+  </head>
+  <body></body>
+</html>
