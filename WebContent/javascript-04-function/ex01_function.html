@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //#1. 함수 선언문 방식으로 함수 만들기
+      function sub1(x, y) {
+        var s = x + y;
+        return s;
+      }
+
+      //반환받는 값이 없는 경우 undefined가 반환된다.
+      var f = sub1(10, 5); //함수 호출
+      console.log(f);
+
+      //#2. 함수표현식 방식으로 함수 만들기
+      //#2-1. 익명함수
+      var sub2 = function (x, y) {
+        //이를 익명함수라고 한다.
+        return x * y;
+      };
+      var mul = sub2; //변수를 다른 변수에 담는 것도 가능하다.
+      console.log(sub2(10, 5));
+      console.log(mul(10, 5));
+
+      //#2-2. 기명함수
+      var sub3 = function sum(x, y) {
+        //기명함수
+        return x + y;
+      };
+      console.log(sub3(10, 5));
+      // console.log(sum(10, 5)); //error... 함수표현식의 함수 이름으로는 호출할 수 없다.
+      //재귀호출할 때는 함수가 자신을 호출할 때 이름이 있어야 하므로 이런 상황에서는 기명함수가 필요하다.
+
+      //#2-2-1. 재귀호출 사용하기
+      var sub4 = function hap(n) {
+        return n > 1 ? n + hap(n - 1) : 1;
+      };
+      console.log(sub4(10));
+
+      //#3. Function()을 이용한 함수 만들기
+      var sub5 = Function("x", "y", "return x+y;");
+      console.log(sub5(10, 5));
+
+      //#4. 함수 선언에서의 함수 호이스팅
+      // var x = sub6(10, 5);
+      // console.log(x);
+
+      // function sub6() {
+      //   return a - b;
+      // }
+
+      //5. 함수 표현식 방법으로 한 함수는 호이스팅이 불가능하다
+      // var sub7 = function(x,y){
+      //   return x-y;
+      // }
+
+      //6. 즉시실행함수 - 함수를 정의하자마자 호출하는 것이 가능
+      (function (name) {
+        console.log(name);
+      })("김길동");
+
+      //
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var s, n;
+      s = 0;
+
+      for (var a = 1; a <= 100; a += 2) {
+        s += a;
+      }
+      document.write(`<p>1~100까지의 홀수 합, for: ${s}</p>`);
+
+      //break 사용 예제
+      s = n = 0;
+      while (true) {
+        n++;
+        s += n;
+        if (n >= 100) break;
+      }
+      document.write(`<p>1~100까지의 합, break 사용: ${s}</p>`);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var s, n;
+      s = n = 0;
+      while (n < 100) {
+        n++;
+        s += n;
+      }
+      document.write(`<p>1~100까지의 합:${s}</p>`);
+
+      s = 0;
+      n = 1;
+      while (n < 100) {
+        s += n;
+        n += 2;
+      }
+      document.write(`<p>1~100까지의 홀수의 합:${s}</p>`);
+    </script>
+  </head>
+  <body></body>
+</html>
