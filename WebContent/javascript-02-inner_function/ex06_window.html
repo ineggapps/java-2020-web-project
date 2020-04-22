@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function fun() {
+        document.write("<p>" + new Date() + "</p>");
+      }
+
+      var t = setInterval("fun()", 1000); //1초에 한 번씩 실행
+      setTimeout(function () {
+        console.log(t + " 타이머를 종료");
+        clearTimeout(t); //타이머 종료하기
+      }, 10000); //10초 후 한 번 실행
+    </script>
+  </head>
+  <body></body>
+</html>

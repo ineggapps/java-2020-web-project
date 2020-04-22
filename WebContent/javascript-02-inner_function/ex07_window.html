@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function fun1() {
+        var s = prompt("수식을 입력하세요 (ex: 2+5)", "");
+        var result = eval(s);
+        alert(result);
+      }
+
+      function fun2() {
+        if (confirm("게시물을 삭제하시겠습니까?")) {
+          alert("삭제되었습니다.");
+          return;
+        }
+        alert("못지워...");
+      }
+    </script>
+  </head>
+  <body>
+    <button type="button" onclick="fun1()">확인 1</button>
+    <button type="button" onclick="fun2()">확인 2</button>
+  </body>
+</html>
