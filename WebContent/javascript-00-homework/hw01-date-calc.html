@@ -19,6 +19,35 @@
         return true;
       }
 
+      function extractDateToArray(str) {
+        var array = new Array(3);
+        array[0] = str.substr(0, 4);
+        array[1] = str.substr(4, 2);
+        array[2] = str.substr(6);
+        if (!isValidate(array[0], array[1], array[2])) {
+          return undefined;
+        }
+        return new Date(array[0], array[1] - 1, array[2]);
+      }
+
+      function welcome() {
+        var desc = document.getElementById("target_desc");
+        var date = extractDateToArray(document.getElementById("target").value);
+        if (date == undefined) {
+          return;
+        }
+        var days = ["일", "월", "화", "수", "목", "금", "토"];
+        var now = new Date();
+        var offset = (now - date) / (1000 * 60 * 60 * 24);
+        offset = Math.ceil(offset) - 1;
+        console.log(offset);
+        var result = `기준일은 <strong>${
+          days[date.getDay()]
+        }요일</strong>이며, 오늘을 기준일로부터 <strong>${offset}일째</strong> 되는 날입니다.`;
+        desc.style.display = "block";
+        desc.innerHTML = result;
+      }
+
       function test() {
         var target = document.getElementById("target").value;
         var y = target.substr(0, 4);
@@ -29,17 +58,6 @@
           return;
         }
         // console.log(y, m, d);
-      }
-
-      function extractDateToArray(str) {
-        var array = new Array(3);
-        array[0] = str.substr(0, 4);
-        array[1] = str.substr(4, 2);
-        array[2] = str.substr(6);
-        if (!isValidate(array[0], array[1], array[2])) {
-          return undefined;
-        }
-        return new Date(array[0], array[1] - 1, array[2]);
       }
 
       function calcAfterDate() {
@@ -94,7 +112,15 @@
         <p class="title">기준년월일</p>
         <div class="components">
           <ul>
-            <li><input type="text" id="target" placeholder="예)20151010" value="20200423" /></li>
+            <li>
+              <input
+                type="text"
+                id="target"
+                onblur="welcome()"
+                placeholder="예)20151010"
+                value="20200423"
+              />
+            </li>
             <!-- <li><button type="button" onclick="test()">테스트</button></li> -->
             <li><input type="reset" value="초기화" /></li>
           </ul>
