@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 난수 발생 예제 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      #box {
+        width: 500px;
+        height: 500px;
+        border: 1px dotted #cccccc;
+        margin: 30px auto;
+      }
+    </style>
+    <script>
+      function bg() {
+        var r = Math.floor(Math.random() * 256); //0~255까지의 난수 발생
+        var g = Math.floor(Math.random() * 256); //0~255까지의 난수 발생
+        var b = Math.floor(Math.random() * 256); //0~255까지의 난수 발생
+
+        var layout = document.getElementById("box");
+        layout.style.backgroundColor = `rgb(${r},${g},${b})`;
+        setTimeout("bg()", 5000);
+      }
+
+      window.onload = function () {
+        bg();
+      };
+    </script>
+  </head>
+  <body>
+    <div id="box"></div>
+  </body>
+</html>
