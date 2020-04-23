@@ -25,7 +25,7 @@
         var m = target.substr(4, 2);
         var d = target.substr(6);
         if (!isValidate(y, m, d)) {
-          alert("날짜를 올바르게 입력해 주세요.");
+          alert("날짜가 범위를 벗어났습니다.");
           return;
         }
         // console.log(y, m, d);
@@ -37,7 +37,7 @@
         array[1] = str.substr(4, 2);
         array[2] = str.substr(6);
         if (!isValidate(array[0], array[1], array[2])) {
-          return NaN;
+          return undefined;
         }
         return new Date(array[0], array[1] - 1, array[2]);
       }
@@ -45,6 +45,10 @@
       function calcAfterDate() {
         var date = extractDateToArray(document.getElementById("target").value);
         var date_offset = parseInt(document.getElementById("date_offset").value);
+        if (date == undefined) {
+          alert("날짜가 범위를 벗어났습니다.");
+          return;
+        }
 
         date.setDate(date.getDate() + date_offset - 1);
         // console.log(date);
@@ -54,11 +58,33 @@
       }
 
       function calcUntil() {
-        alert("까지 며칠 계산");
+        var date1 = extractDateToArray(document.getElementById("target").value);
+        var date2 = extractDateToArray(document.getElementById("date_until").value);
+        if (date1 == undefined || date2 == undefined) {
+          alert("날짜가 범위를 벗어났습니다.");
+          return;
+        }
+
+        var d = (date2 - date1) / (1000 * 60 * 60 * 24);
+        d = Math.ceil(d) + 1;
+
+        var result = `${d}일째`;
+        document.getElementById("answer_until").innerHTML = result;
       }
 
       function calcYearsOld() {
-        alert("나이계산");
+        var date1 = extractDateToArray(document.getElementById("target").value);
+        var date2 = extractDateToArray(document.getElementById("date_birth").value);
+        if (date1 == undefined || date2 == undefined) {
+          alert("날짜가 범위를 벗어났습니다.");
+          return;
+        }
+        var d = (date1 - date2) / (1000 * 60 * 60 * 24);
+        d = Math.trunc(d / 365);
+
+        var result = `${d}세`;
+        // console.log("나이계산", d);
+        document.getElementById("answer_years").innerHTML = result;
       }
     </script>
   </head>
@@ -101,7 +127,7 @@
         <p class="title">생년월일</p>
         <div class="components">
           <ul>
-            <li><input type="text" id="target" placeholder="예)20151010" /> 나이는?</li>
+            <li><input type="text" id="date_birth" placeholder="예)20151010" /> 나이는?</li>
             <li>
               <button type="button" class="button_calc" onclick="calcYearsOld()">계산</button>
             </li>
