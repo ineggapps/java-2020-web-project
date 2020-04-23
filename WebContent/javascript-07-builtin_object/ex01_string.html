@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var s1, s2;
+      s1 = "seoul korea";
+      s2 = s1.length; //문자열의 길이 (속성임, 메서드 아님!!)
+      console.log(s2);
+
+      s2 = s1.charAt(2); //o
+      console.log(s2);
+
+      //substring: s인덱스에서 e-1 인덱스까지
+      s2 = s1.substring(6, 9); //kor
+      console.log(s2);
+
+      s2 = s1.substring(6); //korea
+      console.log(s2);
+
+      //substr: s인덱스에서 n개
+      s2 = s1.substr(6, 3); //kor
+      console.log(s2);
+
+      //substr: s인덱스에서 끝까지
+      s2 = s1.substr(6); //korea
+      console.log(s2);
+
+      s2 = s1.indexOf("o"); //2 (앞에서부터 검색해서 처음 발견하는 o)
+      console.log(s2);
+
+      s2 = s1.lastIndexOf("o"); //7 (뒤에서부터 검색해서 처음 발견하는 o )
+      console.log(s2);
+
+      s2 = s1.indexOf("ABC"); //-1 (존재하지 않으면 -1 반환)
+      console.log(s2);
+
+      s2 = s1.toUpperCase(); //SEOUL KOREA
+      console.log(s2);
+
+      s2 = s1.toLowerCase(); //seoul korea
+      console.log(s2);
+
+      s1 = "         자       바        ";
+      s2 = ":" + s1 + ":";
+      console.log(s2);
+
+      //trim: 양 옆 공백 사라짐
+      //IE7에서 호환되지 않음
+      s2 = ":" + s1.trim() + ":";
+      console.log(s2);
+
+      s1 = "자바,스프링,오라클";
+      s2 = s1.split(",");
+
+      for (var n = 0; n < s2.length; n++) {
+        console.log(s2[n]);
+      }
+
+      s1 = "대한 우리대한 한국 대한";
+      s2 = s1.replace(/대한/g, "大韓"); //정규식 표현으로 치환 가능
+      console.log(s2);
+    </script>
+  </head>
+  <body></body>
+</html>
