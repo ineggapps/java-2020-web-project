@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var objs = {
+        name: "자바",
+      };
+      console.log(objs.name);
+      //없는 속성은 undefined
+      console.log(objs.age); //undefined출력. 오류가 아님
+
+      //동적 속성 추가
+      objs.age = 20;
+      console.log(objs.age);
+
+      //속성 제거
+      console.log(objs.name);
+      delete objs.name;
+      console.log(objs.name);
+    </script>
+  </head>
+  <body></body>
+</html>
