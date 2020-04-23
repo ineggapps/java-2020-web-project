@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function send() {
+        var f = document.myForm;
+        var name = f.name.value;
+        var kor = f.kor.value;
+        var eng = f.eng.value;
+        alert(name + ": " + kor + ", " + eng);
+      }
+
+      function validate(obj) {
+        if (obj.value < 0 || obj.value > 100) {
+          alert(obj.name + "점수는 0~100점 사이여야 합니다.");
+          obj.focus();
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form name="myForm">
+      <p>이름: <input type="text" name="name" /></p>
+      <p>국어: <input type="text" name="kor" onchange="validate(this)" /></p>
+      <p>영어: <input type="text" name="eng" onchange="validate(this)" /></p>
+      <p><button type="button" onclick="send()">확인</button></p>
+    </form>
+  </body>
+</html>
