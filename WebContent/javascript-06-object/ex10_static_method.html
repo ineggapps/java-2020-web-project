@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function User(name) {
+        this.name = name;
+        this.getName = function () {
+          //동적 메서드
+          return this.name;
+        };
+      }
+      User.fun = function () {
+        //정적(static) 메서드
+        return "안녕하세요";
+      };
+
+      console.log(User.fun()); //정적 메서드
+      //   console.log(User.getName()); // Uncaught TypeError: User.getName is not a function
+      var objs = new User("자바");
+      console.log(objs.getName());
+    </script>
+  </head>
+  <body></body>
+</html>
