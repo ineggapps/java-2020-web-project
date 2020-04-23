@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //Object.create() 메서드를 이용하여 객체 생성
+      var Book = {
+        subject: "자바",
+        getSubject: function () {
+          return this.subject;
+        },
+      };
+
+      var book1 = Object.create(Book);
+      var book2 = Object.create(Book);
+      book2.subject = "CSS";
+
+      console.log(book1.getSubject());
+      console.log(book2.getSubject());
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //생성자 함수를 이용한 객체 생성
+      //생성자 작성
+      function User(arg) {
+        //생성자라고 한다.
+        this.name = arg; //속성(Property)
+        this.getName = function () {
+          //메서드
+          return this.name;
+        };
+        this.setName = function (name) {
+          //메서드
+          this.name = name;
+        };
+      }
+
+      var obj = new User("스프링"); //생성자 함수를 이용한 객체 생성
+      console.log(obj.getName()); //"스프링"
+      obj.setName("자바");
+      console.log(obj.getName()); //"자바"
+    </script>
+  </head>
+  <body></body>
+</html>
