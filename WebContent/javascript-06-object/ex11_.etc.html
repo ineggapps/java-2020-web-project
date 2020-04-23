@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var objs = {
+        name: "자바",
+        age: 20,
+      };
+      console.log("name" in objs); //객체에 속성이 존재하는지 검사
+      console.log("subject" in objs);
+
+      with (objs) {
+        console.log(name);
+        console.log(age);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
