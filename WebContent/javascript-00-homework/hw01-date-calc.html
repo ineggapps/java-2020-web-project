@@ -39,15 +39,13 @@
         if (!isValidate(array[0], array[1], array[2])) {
           return NaN;
         }
-        return array;
+        return new Date(array[0], array[1] - 1, array[2]);
       }
 
       function calcAfterDate() {
-        var target_array = extractDateToArray(document.getElementById("target").value);
+        var date = extractDateToArray(document.getElementById("target").value);
         var date_offset = parseInt(document.getElementById("date_offset").value);
 
-        // console.log(target_array, date_offset);
-        var date = new Date(target_array[0], target_array[1] - 1, target_array[2]);
         date.setDate(date.getDate() + date_offset - 1);
         // console.log(date);
 
