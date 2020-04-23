@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var objs = {
+        name: "자바",
+        age: 20,
+      };
+      console.dir(objs); //name, age, __proto__ 프로퍼티가 존재
+      //__proto__: 부모에게 물려받은 속성
+      console.log(objs.valueOf()); //{name:"자바", age: 20} 으로 출력
+
+      //생성자
+      function User(name) {
+        this.name = name;
+      }
+
+      var objs2 = new User("홍길동");
+      //User.prototype: 자신의 프로토타입, 하위에 물려줄 수 있는 정보를 가지고 있음.
+      console.log(User.prototype); // {constructor: ƒ}, __proto)): Object
+      console.log(Object.getPrototypeOf(objs2) === User.prototype); //true
+      console.log(User.prototype.constructor === User); //true
+    </script>
+  </head>
+  <body></body>
+</html>
