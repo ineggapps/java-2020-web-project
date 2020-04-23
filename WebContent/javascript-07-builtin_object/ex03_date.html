@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function showClock() {
+        var now = new Date();
+        var y = now.getFullYear(); //getYear와는 다르다 (2자리 반환, 더는 사용되지 않고 getFullYear로 대체됨)
+        var m = now.getMonth() + 1;
+        if (m < 10) {
+          m = "0" + m;
+        }
+        var d = now.getDate();
+        if (d < 10) {
+          d = "0" + d;
+        }
+        var hr = now.getHours();
+        var mn = now.getMinutes();
+        var sc = now.getSeconds();
+
+        if (hr < 10) {
+          hr = "0" + hr;
+        }
+        if (mn < 10) {
+          mn = "0" + mn;
+        }
+        if (sc < 10) {
+          sc = "0" + sc;
+        }
+
+        var s = y + "-" + m + "-" + d + " " + hr + ":" + mn + ":" + sc;
+        document.getElementById("nowDate").value = s;
+
+        setTimeout("showClock()", 1000);
+      }
+
+      /*onload: body요소가 로드되기 직전 (브라우저에 렌더링되기 직전에 모두 구성된 상태의 이벤트)*/
+      window.onload = function () {
+        showClock();
+      };
+    </script>
+    <style type="text/css">
+      #nowDate {
+        width: 100%;
+        font-size: 3rem;
+        text-align: center;
+        border: 0;
+      }
+      #nowDate:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="nowDate" readonly="readonly" />
+    </div>
+  </body>
+</html>
