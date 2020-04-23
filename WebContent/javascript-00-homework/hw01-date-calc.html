@@ -104,7 +104,7 @@
         var days = ["일", "월", "화", "수", "목", "금", "토"];
         var now = new Date();
         var offset = (now - date) / (1000 * 60 * 60 * 24);
-        offset = Math.ceil(offset) - 1;
+        offset = Math.ceil(offset);
         console.log(offset);
         var result = `기준일은 <strong>${
           days[date.getDay()]
