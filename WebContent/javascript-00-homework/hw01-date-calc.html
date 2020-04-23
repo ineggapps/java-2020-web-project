@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      #target_desc {
+        display: none;
+      }
+    </style>
+    <script>
+      function isValidate(y, m, d) {
+        //날짜 유효성 검사. 올바르면 true를 반환한다.
+        var date = new Date(y, m - 1, d);
+        if (date.getFullYear() != y || date.getMonth() + 1 != m || date.getDate() != d) {
+          return false;
+        }
+        return true;
+      }
+
+      function test() {
+        var target = document.getElementById("target").value;
+        var y = target.substr(0, 4);
+        var m = target.substr(4, 2);
+        var d = target.substr(6);
+        if (!isValidate(y, m, d)) {
+          alert("날짜를 올바르게 입력해 주세요.");
+          return;
+        }
+        // console.log(y, m, d);
+      }
+
+      function extractDateToArray(str) {
+        var array = new Array(3);
+        array[0] = str.substr(0, 4);
+        array[1] = str.substr(4, 2);
+        array[2] = str.substr(6);
+        if (!isValidate(array[0], array[1], array[2])) {
+          return NaN;
+        }
+        return array;
+      }
+
+      function calcAfterDate() {
+        var target_array = extractDateToArray(document.getElementById("target").value);
+        var date_offset = parseInt(document.getElementById("date_offset").value);
+
+        // console.log(target_array, date_offset);
+        var date = new Date(target_array[0], target_array[1] - 1, target_array[2]);
+        date.setDate(date.getDate() + date_offset - 1);
+        // console.log(date);
+
+        var result = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}.`;
+        document.getElementById("answer_offset").innerHTML = result;
+      }
+
+      function calcUntil() {
+        alert("까지 며칠 계산");
+      }
+
+      function calcYearsOld() {
+        alert("나이계산");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="row">
+        <p class="title">기준년월일</p>
+        <div class="components">
+          <ul>
+            <li><input type="text" id="target" placeholder="예)20151010" value="20200423" /></li>
+            <!-- <li><button type="button" onclick="test()">테스트</button></li> -->
+            <li><input type="reset" value="초기화" /></li>
+          </ul>
+          <p class="desc" id="target_desc"></p>
+        </div>
+      </div>
+      <div class="row">
+        <p class="title">기준일부터</p>
+        <div class="components">
+          <ul>
+            <li><input type="text" id="date_offset" placeholder="예)100" />일째 되는 날은?</li>
+            <li>
+              <button type="button" onclick="calcAfterDate()" class="button_calc">계산</button>
+            </li>
+            <li>
+              <span class="answer" id="answer_offset">#</span>
+            </li>
+          </ul>
+          <ul>
+            <li><input type="text" id="date_until" placeholder="예)20151010" />까지 며칠?</li>
+            <li><button type="button" class="button_calc" onclick="calcUntil()">계산</button></li>
+            <li>
+              <span class="answer" id="answer_until">#</span>
+            </li>
+          </ul>
+          <p class="desc">기준일을 1일로 계산</p>
+        </div>
+      </div>
+      <div class="row">
+        <p class="title">생년월일</p>
+        <div class="components">
+          <ul>
+            <li><input type="text" id="target" placeholder="예)20151010" /> 나이는?</li>
+            <li>
+              <button type="button" class="button_calc" onclick="calcYearsOld()">계산</button>
+            </li>
+            <li>
+              <span class="answer" id="answer_years">#</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
