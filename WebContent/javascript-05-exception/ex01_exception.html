@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   function sub() {
+      //     console.log(x); //Reference Error: x is not defined.
+      //     console.log("실행될까?"); //실행되지 않는다.
+      //   }
+
+      function sub() {
+        /*
+            예외처리를 잘못하면 오류를 잡지 못할 수도 있음.
+        */
+        try {
+          console.log(x);
+          console.log("실행될까?"); //실행되지 않음
+        } catch (err) {
+          console.log(err);
+          console.log("예외 발생!");
+        } finally {
+          console.log("finally block");
+        }
+        console.log("실행될까?? (try구문 빠져나옴)");
+      }
+
+      sub();
+    </script>
+  </head>
+  <body></body>
+</html>
