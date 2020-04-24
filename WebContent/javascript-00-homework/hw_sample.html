@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./util.js"></script>
+    <script>
+      function send() {
+        var f = document.myForm;
+        if (!isImageFile(f.inputFile.value)) {
+          alert("이미지 파일만 가능합니다.");
+          return;
+        }
+
+        alert(f.inputFile.value + " 파일을 선택하였습니다.");
+      }
+    </script>
+  </head>
+  <body>
+    <form name="myForm">
+      <p><input type="file" name="inputFile" /></p>
+      <p><button type="button" onclick="send();">확인</button></p>
+    </form>
+  </body>
+</html>
