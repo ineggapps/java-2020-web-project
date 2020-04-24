@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p><input type="text" id="inputs" /></p>
+    <div id="layout1"></div>
+    <div id="layout2"></div>
+    <div id="layout3"></div>
+    <p>이벤트 발생 순서</p>
+    <p>keydown -&gt; keypress -&gt; keyup</p>
+    <p>└ A~Z, 0~9, 엔터 등</p>
+    <p>keydown -&gt; keyup</p>
+    <p>└ F1~F12, ctrl, shift, alt</p>
+    <script>
+      document.getElementById("inputs").onkeydown = (e) => {
+        var objs = document.getElementById("layout1");
+        var code = e.keyCode;
+
+        var s = "keydown 키코드: " + code;
+        objs.innerHTML = s;
+
+        /*
+        keydown: 어떤 키가 눌렸는지 알려준다. 모든 키에서 다 일어난다.
+        */
+      };
+
+      document.getElementById("inputs").onkeypress = (e) => {
+        var objs = document.getElementById("layout2");
+        var code = e.keyCode;
+
+        var s = "keypress 키코드: " + code;
+        objs.innerHTML = s;
+
+        /*
+        keypress: 
+        */
+      };
+      document.getElementById("inputs").onkeyup = (e) => {
+        var objs = document.getElementById("layout3");
+        var code = e.keyCode;
+
+        var s = "keyup 키코드: " + code;
+        objs.innerHTML = s;
+        /*
+        keyup:
+        */
+      };
+    </script>
+  </body>
+</html>
