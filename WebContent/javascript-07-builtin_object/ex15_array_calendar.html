@@ -78,13 +78,18 @@
         margin: 30px auto;
         text-align: center;
       }
+
+      .gray {
+        color: #ccc !important;
+      }
     </style>
 
     <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
     <script type="text/javascript">
       // 월의 마지막 날짜
       function lastDayMonth(y, m) {
-        var date = new Date(y, m, 1 - 1);
+        //월의 마지막달 구하기
+        var date = new Date(y, m, 1 - 1); //m+1월 0일 => m월 말일을 의미
         return date.getDate();
       }
 
@@ -136,9 +141,12 @@
         }
         html += "</tr>";
 
+        //전 달 말일 구하여 숫자 카운트하기
+        //2020년 4월의 전달은 3월임. 3월 29(일), 30(월), 31(화)
+        var last = lastDayMonth(y, m - 1);
         html += " <tr> ";
         for (var i = 0; i < w; i++) {
-          html += "<td>&nbsp;</td>";
+          html += `<td class="gray">${last - w + 1 + i}</td>`;
         }
 
         var n = 1;
@@ -163,8 +171,9 @@
           }
         }
 
+        var future = 1;
         for (var i = w % 7; i < 6; i++) {
-          html += "<td>&nbsp;</td>";
+          html += `<td class="gray">${future++}</td>`;
         }
         html += "</tr>";
 
