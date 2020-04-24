@@ -46,7 +46,7 @@
 
         var week = ["일", "월", "화", "수", "목", "금", "토"];
         var html = "";
-        html = `<table border="1" style="border:1px solid #cccccc; margin: 10px auto; width: 210px; border-spacing: 0; border-collapse: collapse;">`;
+        html = `<table border="1" style="margin: 10px auto; width: 210px; border-spacing: 0; border-collapse: collapse;">`;
         //🎈 요일 헤더
         html += `<tr align="center" height="25">`;
         var color;
@@ -62,9 +62,9 @@
           html += `<td style="background-color:#d9d9d9">&nbsp;</td>`;
         }
         // html += `</tr>`;
-        // 🎇 말일 구하기
         var n = 1;
         // html += `<tr align="center" height="25">`;
+        // 🎈 날짜 그리기
         while (true) {
           color = "black";
           html += `<td width="30" style="text-align:center;color:${color};">${n}</td>`;
@@ -72,17 +72,18 @@
           //   date = new Date(y, m - 1, n);
           date.setDate(n);
           if (date.getMonth() + 1 != m) {
+            // 🎇 말일 구하기
             break;
           }
           if (++w % 7 == 0) {
             html += `</tr><tr align="center" height="25">`;
           }
         }
+
+        for (var i = w % 7; i < 6; i++) {
+          html += `<td style="background-color:#d9d9d9">&nbsp;</td>`;
+        }
         html += `</tr>`;
-
-        // 🎈 날짜 그리기
-
-        console.log(w);
 
         html += `</table>`;
         return html;
