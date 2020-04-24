@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var s = "";
+      for (var i in screen) {
+        s += i + ": " + screen[i] + "<br />"; //모니터 해상도에 따라 달라지는 내용이다.
+        console.log(i, screen[i]);
+      }
+      document.write(s);
+
+      //navigator
+      for (var i in navigator) {
+        console.log(i, navigator[i]);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

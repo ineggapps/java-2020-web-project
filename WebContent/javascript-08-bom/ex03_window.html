@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var p = null;
+
+      function openPop() {
+        var flag;
+        var url = "https://www.google.com";
+        flag = "left=10,top=10,";
+        flag += "width=700, height=600 ";
+        p = window.open(url, "popup", flag);
+      }
+      function closePop() {
+        //파이어폭스 75.0에서는 작동하지 않음.
+        if (p != null) {
+          p.close();
+        }
+        p = null;
+      }
+    </script>
+  </head>
+  <body>
+    <p><a href="#" onclick="openPop()">팝업열기</a></p>
+    <p><a href="#" onclick="closePop()">팝업닫기</a></p>
+  </body>
+</html>
