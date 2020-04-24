@@ -62,6 +62,11 @@
         color: black;
       }
 
+      #resultLayout table td.today {
+        font-weight: bold;
+        color: lightseagreen;
+      }
+
       #resultLayout table td:nth-child(7n + 1) {
         color: red;
       }
@@ -137,9 +142,15 @@
         }
 
         var n = 1;
-        color = "";
+        var today;
         while (true) {
-          html += "<td>" + n + "</td>";
+          if (y == ny && m == nm && n == nd) {
+            //오늘
+            today = ` class="today"`;
+          } else {
+            today = ``;
+          }
+          html += `<td${today}>${n}</td>`;
 
           n++;
           date.setDate(n);
