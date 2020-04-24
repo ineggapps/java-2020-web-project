@@ -66,7 +66,12 @@
         // html += `<tr align="center" height="25">`;
         // 🎈 날짜 그리기
         while (true) {
-          color = "black";
+          if (y == ny && m == nm && n == nd) {
+            //오늘
+            color = "green";
+          } else {
+            color = w % 7 == 0 ? "red" : w % 7 == 6 ? "blue" : "black";
+          }
           html += `<td width="30" style="text-align:center;color:${color};">${n}</td>`;
           n++;
           //   date = new Date(y, m - 1, n);
@@ -75,7 +80,8 @@
             // 🎇 말일 구하기
             break;
           }
-          if (++w % 7 == 0) {
+          w++;
+          if (w % 7 == 0) {
             html += `</tr><tr align="center" height="25">`;
           }
         }
