@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function sub1() {
+        var objs = document.getElementById("box");
+        var s = objs.innerHTML; //HTML을 설정하거나 반환받을 수 있음
+        alert(s);
+      }
+      function sub2() {
+        var objs = document.getElementById("box");
+        var s = objs.innerText; //HTML을 설정하거나 반환받을 수 있음
+        alert(s);
+      }
+      function sub3() {
+        var objs = document.getElementById("box");
+        var s = `<span style="color:red">자바</span>: <strong>스프링</strong>`;
+        objs.innerHTML = s; //HTML을 설정하거나 반환받을 수 있음
+      }
+      function sub4() {
+        var objs = document.getElementById("box");
+        var s = `<span style="color:red">자바</span>: <strong>스프링</strong>`;
+        objs.innerText = s; //HTML을 설정하거나 반환받을 수 있음
+      }
+    </script>
+  </head>
+  <body>
+    <div id="box"><strong>자바: </strong>프로그래밍</div>
+    <p>
+      <button type="button" onclick="sub1();">확인1</button>
+      <button type="button" onclick="sub2();">확인2</button>
+      <button type="button" onclick="sub3();">확인3</button>
+      <button type="button" onclick="sub4();">확인4</button>
+    </p>
+  </body>
+</html>
