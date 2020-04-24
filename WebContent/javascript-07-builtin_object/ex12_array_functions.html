@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var a = [10, 20, 30, 20, 50];
+
+      console.log(a.indexOf(20)); //1 : 요소가 존재하면  첫 번째 발견하 index를, 존재하지 않으면 -1을 반환한다.
+      console.log(a.indexOf(-20)); // 존재하지 않으면 -1을 반환한다.
+
+      var s = a.join(); //배열의 모든 요소를 하나의 문자열로 합친다. (n,n,n,n,…)
+      console.log(s);
+
+      var a2 = a.reverse(); //배열의 순서를 뒤집는다
+      console.log(a2.join());
+
+      var a3 = [50, 30, 70, 90, 10];
+      console.log(a3.sort()); //오름차순 정렬;
+      console.log(a3.join());
+
+      a3.sort((a, b) => {
+        //내림차순 정렬
+        //a: 첫 번째 숫잣값, b: 두 번째 숫잣값.
+        return -(a - b);
+      });
+      console.log(a3.join());
+
+      var a4 = ["자바", "스프링", "HTML", "css", "심심해"];
+      a4.sort();
+      console.log(a4.join());
+
+      a4.sort((a, b) => {
+        //내림차순 정렬 http://mwultong.blogspot.com/2006/11/sort-string-array-javascript.html
+        if (a > b) return -1;
+        if (b > a) return 1;
+        return 0;
+      });
+      console.log(a4.join());
+    </script>
+  </head>
+  <body></body>
+</html>

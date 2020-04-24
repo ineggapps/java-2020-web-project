@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function lotto() {
+        var objsBox = document.getElementById("box");
+        var count = document.getElementById("count");
+        var cnt = count.value;
+        if (!/^[1-5]$/g.test(cnt)) {
+          alert("로또 개수는 1~5 사이만 가능합니다.");
+          count.focus();
+          return;
+        }
+        cnt = parseInt(cnt); // number 형으로 변환
+
+        objsBox.innerHTML = "";
+        var s = "";
+        var num = new Array(6);
+        for (var c = 0; c < cnt; c++) {
+          //무작위 생성
+          for (var i = 0; i < num.length; i++) {
+            // console.log(`${i}시작`);
+            num[i] = Math.floor(Math.random() * 45) + 1;
+            //중복처리
+            for (var x = 0; x < i; x++) {
+              if (num[x] == num[i]) {
+                // console.log(c, "겹쳤다", num[x], num[i]);
+                i--;
+                break;
+              }
+            }
+            // console.log(`${i}값`);
+          }
+          num.sort((a, b) => {
+            //🔥🔥🔥🔥🔥 가변적으로 배열에 값을 추가할 때는 정렬 기준을 명시적으로 지정해 주어야 한다. 🔥🔥🔥🔥🔥
+            //휴... 난 그것도 모르고 //_ \\...
+            return a - b;
+          });
+          //정렬
+          s += `<p>${num.join()}</p>`;
+        }
+        objsBox.innerHTML = s;
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="count" placeholder="구매 개수" />
+      <button type="button" onclick="lotto();">구매</button>
+    </div>
+    <hr />
+    <div id="box"></div>
+  </body>
+</html>
