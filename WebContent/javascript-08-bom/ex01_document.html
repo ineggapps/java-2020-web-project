@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function sub() {
+        var s;
+        var subject = document.getElementsByName("subject")[0].value;
+        s = "이름 접근: " + subject;
+        var id = document.getElementById("inputId").value;
+        s += "\n아이디로 접근: " + id;
+        var selector = document.querySelector(".boxTF").value; //조건만족 "첫" 번째 요소임.
+        s += "\n선택자로 접근: " + selector;
+        document.write(s);
+      }
+    </script>
+  </head>
+  <body>
+    <p>이름으로 접근: <input type="text" name="subject" /></p>
+    <p>아이디로 접근: <input type="text" id="inputId" /></p>
+    <p>선택자로 접근: <input type="text" class="boxTF" /></p>
+    <p><button type="button" onclick="sub()">확인</button></p>
+  </body>
+</html>
